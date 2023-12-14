@@ -1,0 +1,17 @@
+Assembler :
+java -cp "/usr/share/java/*:MVaP.jar" MVaPAssembler add.mvap
+
+Exécuter :
+java -jar MVaP.jar -d add.mvap.cbap
+
+Compiler la grammaire et la lancer:
+antlr4 MVaPCodeGenerator.g4 ; javac MVaPCodeGenerator*.java ; antlr4-grun MVaPCodeGenerator 'start'
+
+Full exec:
+antlr4 MVaPCodeGenerator.g4 ; javac MVaPCodeGenerator*.java ; cat code.mvapC | antlr4-grun MVaPCodeGenerator 'start' > out.mvap ; java -cp "/usr/share/java/*:MVaP.jar" MVaPAssembler out.mvap ; java -jar MVaP.jar -d out.mvap.cbap
+
+https://www.antlr.org/
+
+var x : int = 21
+while(false) x=x-1;
+write(2*x)

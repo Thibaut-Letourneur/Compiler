@@ -1,0 +1,33 @@
+var x : double[2];
+var i : int = 888;
+var fillValue : double = 6.0;
+
+fun arrayMultiply2 : void (double array[])
+{
+    for(i = 0; i < 2; i++)
+        array[i] /= 2;
+}
+
+fun fillArray : void(double array[], double val)
+{
+    for(i = 0; i < 2; i++)
+        array[i] = val;
+}
+
+fillArray(x, fillValue);
+for(i = 0; i < 2; i++)
+{
+    if(x[i] != fillValue)
+        write(-100)
+    else
+        write(42);
+}
+
+arrayMultiply2(x);
+for(i = 0; i < 2; i++)
+{
+    if(x[i] != fillValue/2)
+        write(-100)
+    else
+        write(42);
+}
